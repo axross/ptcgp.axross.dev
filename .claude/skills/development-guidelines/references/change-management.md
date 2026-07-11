@@ -42,20 +42,13 @@ Each dependency is a standing cost — maintenance, supply-chain surface, and bu
 **Guidelines:**
 
 - SHOULD NOT add a new dependency when the task can be reasonably accomplished with the packages already in the project's manifest, or with built-in language/platform APIs.
-- MUST add dependencies through {{PACKAGE_MANAGER}} rather than editing the manifest by hand, so the lockfile stays consistent.
+- MUST add dependencies through npm rather than editing the manifest by hand, so the lockfile stays consistent.
 
-## Modifying the Data Layer / Generated Code
+## Modifying the Content Layer / Generated Code
 
-<!-- INIT:OPTIONAL key=DATA_LAYER — keep & fill the token (add the tool, INIT Step 5) OR delete this section. -->
-*If this project has no {{CMS_OR_DATA_LAYER}} or other schema-bound generated code, delete this section during INIT.*
-
-A schema change without its migration leaves every other environment on the old schema, so what works locally breaks on the next deploy or fresh checkout.
-
-- Schema-bound code paths (data-layer schema definitions, generated types, and migration files) require a migration step only when the change alters the underlying schema — adding, removing, or renaming fields/entities, or changing field types. Behavioral changes that do not touch the schema do not.
-- Some files under the data layer are generated or vendor-managed and are overwritten on upgrades. Do NOT hand-edit generated/vendor-managed files; change the source-of-truth definitions instead. Identify which directories are generated during INIT.
+The content layer is MDX pages committed under `src/app` and compiled at build time — there is no database or migration workflow. The generated files to respect are the framework's own.
 
 **Guidelines:**
 
-- MUST create or regenerate a data-layer schema migration immediately after changing the schema, then apply it locally before testing (see [dev-commands.md](./dev-commands.md) for the relevant commands).
-- MUST NOT modify an already-applied migration file. Create a new migration instead.
-- MUST NOT hand-edit generated or vendor-managed files; they will be overwritten on upgrades.
+- MUST treat a change to the MDX pipeline (`next.config.ts` MDX options, `src/mdx-components.tsx`, remark/rehype plugins) as affecting every content page; verify a representative page after such changes.
+- MUST NOT hand-edit generated or vendor-managed files (`next-env.d.ts`, `.next/`, lockfile entries beyond what npm writes); they will be overwritten.

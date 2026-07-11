@@ -1,0 +1,47 @@
+.header {
+  position: sticky;
+  top: 0;
+  border-bottom: 1px solid var(--color-border);
+  background-color: color-mix(
+    in srgb,
+    var(--color-background) 85%,
+    transparent
+  );
+  backdrop-filter: blur(8px);
+}
+
+.inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  max-width: var(--content-max-width);
+  margin: 0 auto;
+  padding: 0.75rem 1.25rem;
+}
+
+.wordmark {
+  color: var(--color-foreground);
+  font-weight: 700;
+  letter-spacing: -0.01em;
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.navLink {
+  color: var(--color-foreground-muted);
+  font-size: 0.9375rem;
+}
+
+.navLink:hover {
+  color: var(--color-foreground);
+}
+
+.navLink[aria-current="page"] {
+  color: var(--color-foreground);
+  font-weight: 600;
+}

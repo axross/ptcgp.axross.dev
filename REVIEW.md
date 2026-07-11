@@ -1,8 +1,5 @@
 # Review Instructions
 
-<!-- INIT:OPTIONAL key=INDEPENDENT_REVIEW — keep this file if the project adopts a posted-review channel OR delete it together with every other key=INDEPENDENT_REVIEW site; the INIT.md Step-4 bullet is the authoritative deletion list. -->
-*If this project posts no independent reviews — no managed review product, no CI reviewer, no local review command — delete this file and the rest of the independent-review capability during INIT.*
-
 Review **policy** for this repository — the highest-priority, review-only
 instructions. Every reviewer entry point reads this file: a managed review
 product (e.g. Claude Code's managed Code Review) natively, and the CI
@@ -72,11 +69,10 @@ review — CI blocks the merge regardless, so restating them costs the author's
 attention without adding a gate. This exclusion governs **posted** reviews
 only; internal self-review triage still flags these findings.
 
-<!-- INIT: replace the first bullet with the checks this project's CI actually enforces (the jobs in .github/workflows/merge-checks.yaml — e.g. its lint and unit-test runs). -->
-
-- Anything CI already enforces — the lint and unit-test checks run by the
-  project's merge-checks workflow.
-- Lockfiles and generated files.
+- Anything CI already enforces — the Biome lint (`npm run lint`), TypeScript
+  type-check (`npm run typecheck`), and Vitest unit-test (`npm run test:unit`)
+  runs in the merge-checks workflow.
+- Lockfiles and generated files (`package-lock.json`, `next-env.d.ts`).
 
 **Guidelines:**
 

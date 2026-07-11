@@ -39,9 +39,6 @@ See [severity.md](./references/severity.md) for:
 
 ## Repository Review Policy Overlay
 
-<!-- INIT:OPTIONAL key=INDEPENDENT_REVIEW — keep this section if the project adopts the posted-review channel (REVIEW.md at the repo root) OR delete it (and the marked posted-review bullets in ./references/severity.md and ./references/evidence.md, and the posted-review parenthetical in ./references/escalation.md); see the INIT.md Step-4 bullet. -->
-*If this project has no posted-review channel (no `REVIEW.md` at the repo root), delete this section during INIT.*
-
 When the review output is a **posted** pull-request review — the CI
 reviewer or a managed review product —
 [`REVIEW.md`](../../../REVIEW.md) at the repo root is the authoritative policy
@@ -111,16 +108,18 @@ Consult the appropriate skill for detailed review checklists in each lens. These
 |---|---|
 | Readability, naming, complexity, abstraction boundaries, scope discipline, dead code | the project's maintainable-code guidelines |
 | Verifying e2e coverage, snapshot handling, flakiness, manual verification, lint/format gate | the project's quality-assurance guidelines |
-| OWASP-lens application security — secrets, input validation, access control, XSS, SSRF, auth, supply chain | the project's application-security requirements |
-| Data-layer query cost (N+1), server/client boundary cost, caching correctness, asset/image optimization, bundle weight, error and observability hooks | the project's performance-and-reliability requirements |
-
-In addition to the lenses above, the reviewer MUST also load the project's own topic-specific skills when they exist and overlap the diff — for example skills covering repository structure, components, routing, UI design, or the project's domain rules. These are project-specific skills created during INIT and are not part of this template; consult whichever ones the project defines.
+| OWASP-lens application security — secrets, input validation, XSS, SSRF, supply chain | the project's application-security requirements |
+| Server/client boundary cost, caching correctness, asset/image optimization, bundle weight, error and observability hooks | the project's performance-and-reliability requirements |
+| File placement, directory tiers, routing conventions | the project's project-structure skill |
+| Component anatomy, CSS Modules pairing, Base UI usage, test-id hooks | the project's component guidelines |
+| Color roles, typography, control selection, responsive/theming intent | the project's UI design principles |
+| MDX page shape, writing style, linking, fan-content boundary | the project's content-authoring guidelines |
 
 **Guidelines:**
 
 - MUST choose every topic-specific lens that materially overlaps the diff before reporting findings.
 - SHOULD cite the owning lens when a finding depends on a specialized project rule.
-- MUST NOT treat this table as exhaustive when the diff has an obvious topic covered by a developer-facing skill below or by a project-specific skill defined during INIT.
+- MUST NOT treat this table as exhaustive when the diff has an obvious topic covered by a developer-facing skill below.
 
 ## Developer-Facing Guidelines (defer, do not duplicate)
 
@@ -128,12 +127,12 @@ Developer-facing skills own how to write project-conforming code. The review ski
 
 | Topic | Skill |
 |---|---|
-| Format/lint loop, change scope discipline, dependency / data-layer migration rules | the project's development guidelines |
-| Error handling and structured logging | the project's observability guidelines |
+| Format/lint loop, change scope discipline, dependency and content-pipeline rules | the project's development guidelines |
+| Error handling and error reporting | the project's observability guidelines |
 | End-to-end test structure, conventions, and commands | the project's end-to-end testing guidelines |
 | Unit test structure, conventions, mocks/fixtures, and commands | the project's unit-test guidelines |
 
-In addition, the reviewer MUST defer to the project's own developer-facing skills when they exist — for example skills covering repository structure and file placement, routing/URL conventions, component conventions, or UI/visual design. These are project-specific skills created during INIT and are not part of this template; cite whichever ones the project defines instead of restating their rules.
+In addition, the reviewer MUST defer to the project-specific skills named in the lens table above (project structure, component guidelines, UI design principles, content authoring) — cite them instead of restating their rules.
 
 **Guidelines:**
 

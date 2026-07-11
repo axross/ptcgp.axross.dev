@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+  <title>ptcgp.axross.dev</title>
+  <rect width="32" height="32" rx="7" fill="#d97706"/>
+  <circle cx="16" cy="16" r="8" fill="#ffffff"/>
+  <path d="M8 16a8 8 0 0 1 16 0Z" fill="#18181b"/>
+  <circle cx="16" cy="16" r="3" fill="#18181b"/>
+  <circle cx="16" cy="16" r="1.5" fill="#ffffff"/>
+</svg>
