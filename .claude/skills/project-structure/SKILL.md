@@ -1,6 +1,8 @@
 ---
 name: project-structure
-description: Use this skill when navigating the repository, deciding where a new module, route, component, content page, or test belongs, or checking the project's stack, tooling, directory conventions, or routing/file conventions. Covers the Next.js App Router layout, the src/ by-purpose organization, MDX content placement, colocation rules for tests and styles, and path aliases.
+description: The repository's structure and conventions. Covers the Next.js App Router layout, the src/ by-purpose organization, MDX content placement, colocation rules for tests and styles, and path aliases.
+when_to_use: Use when navigating the repository, deciding where a new module, route, component, content page, or test belongs, or checking the project's stack, tooling, directory conventions, or routing/file conventions.
+user-invocable: false
 ---
 
 # Project Structure

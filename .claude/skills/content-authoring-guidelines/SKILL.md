@@ -1,6 +1,8 @@
 ---
 name: content-authoring-guidelines
-description: Use this skill when writing, editing, or reviewing MDX content pages for this Pokémon TCG Pocket documentation site — creating a new guide, page metadata exports, heading structure, tables and examples, internal/external linking, tone, game terminology, and the unofficial-fan-content boundary.
+description: Conventions for MDX content pages on this Pokémon TCG Pocket documentation site. Covers page placement and metadata exports, heading structure, tables and examples, internal/external linking, tone, game terminology, and the unofficial-fan-content boundary.
+when_to_use: Use when writing, editing, or reviewing an MDX guide page — creating a new guide, page metadata, headings, tables, links, tone, or the fan-content disclaimer.
+user-invocable: false
 ---
 
 # Content Authoring Guidelines
