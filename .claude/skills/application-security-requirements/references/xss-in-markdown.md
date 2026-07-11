@@ -1,6 +1,6 @@
 # Injection in Rendered Untrusted Content
 
-Apply these rules to verify that any rendering of untrusted (user- or CMS-authored) content — rich text, markdown, or HTML — does not allow that content to inject script or break out of the rendering layer's output encoding. The markdown renderer is one common instance of this surface; the same rules apply to any pipeline that turns authored content into markup.
+Apply these rules to verify that any rendering of untrusted content — rich text, markdown, or HTML — does not allow that content to inject script or break out of the rendering layer's output encoding. This project's MDX pages are trusted (repository-committed and reviewed), so this lens applies to any *new* path that renders content from outside the repository.
 
 ## Pipeline Configuration to Watch
 
@@ -61,4 +61,4 @@ A constrained input format is itself a security control: every capability the fo
 **Guidelines:**
 
 - MUST flag a Critical when new code processes raw HTML through a pipeline that previously accepted only a constrained format — that widens the attack surface to anything the HTML layer accepts.
-- MUST flag a Critical when a new module loads authored content from the filesystem or arbitrary HTTP at runtime — the project rule is that all such content comes from the trusted data/content layer.
+- MUST flag a Critical when a new module loads authored content from arbitrary HTTP or user input at runtime — the project rule is that all such content is MDX committed to this repository.

@@ -1,0 +1,46 @@
+{
+  "name": "ptcgp.axross.dev",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Documentation website for Pokémon TCG Pocket, authored in MDX.",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/axross/ptcgp.axross.dev.git"
+  },
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "format": "biome format --write .",
+    "lint": "biome check .",
+    "typecheck": "tsc --noEmit",
+    "test:unit": "vitest run",
+    "test:e2e": "playwright test && node e2e/scenario-coverage.mjs",
+    "test:e2e:coverage": "playwright test && node e2e/scenario-coverage.mjs --gate=must"
+  },
+  "dependencies": {
+    "@base-ui/react": "^1.6.0",
+    "@mdx-js/loader": "^3.1.1",
+    "@mdx-js/react": "^3.1.1",
+    "@next/mdx": "^16.2.10",
+    "@sentry/nextjs": "^10.65.0",
+    "next": "^16.2.10",
+    "react": "^19.2.7",
+    "react-dom": "^19.2.7",
+    "remark-gfm": "^4.0.1",
+    "zod": "^4.4.3"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "^2.5.3",
+    "@playwright/test": "^1.61.1",
+    "@types/mdx": "^2.0.14",
+    "@types/node": "^26.1.1",
+    "@types/react": "^19.2.17",
+    "@types/react-dom": "^19.2.3",
+    "typescript": "^5.9.3",
+    "vitest": "^4.1.10"
+  }
+}
