@@ -1,6 +1,8 @@
 ---
 name: ui-design-principles
-description: Use this skill when deciding how a surface of this site should look — color roles and the CSS-variable palette, light/dark theming, typography and the prose column, control selection, spacing, responsive behavior, copy tone in the chrome, and accessibility intent. Design vocabulary only; implementation mechanics live in the component skill.
+description: The design vocabulary for how a surface of this site should look — color roles and the CSS-variable palette, light/dark theming, typography and the prose column, control selection, spacing, responsive behavior, copy tone in the chrome, and accessibility intent. Design vocabulary only; implementation mechanics live in the component skill.
+when_to_use: Use when deciding how a surface of this site should look — color roles, light/dark theming, typography, control selection, spacing, responsive behavior, or chrome copy.
+user-invocable: false
 ---
 
 # UI Design Principles

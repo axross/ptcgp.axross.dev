@@ -1,6 +1,8 @@
 ---
 name: component-guidelines
-description: Use this skill when writing, placing, reviewing, or refactoring a React component in this project — component anatomy and naming, CSS Modules pairing, Base UI headless primitives, server/client boundary decisions, test-id hooks, accessibility mechanics, and when a repeated pattern earns a shared component.
+description: How to build React components in this project. Covers component anatomy and naming, CSS Modules pairing, Base UI headless primitives, server/client boundary decisions, test-id hooks, accessibility mechanics, and when a repeated pattern earns a shared component.
+when_to_use: Use when writing, placing, reviewing, or refactoring a React component in this project — anatomy, CSS Modules styling, Base UI usage, server/client boundaries, test-id hooks, or promotion to a shared component.
+user-invocable: false
 ---
 
 # Component Guidelines

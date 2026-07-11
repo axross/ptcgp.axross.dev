@@ -1,6 +1,8 @@
 ---
 name: observability-guidelines
-description: Use this skill whenever writing, reviewing, or modifying code that throws, catches, or reports errors — including `try`/`catch` placement, Sentry capture calls, top-level error boundaries, and error-message quality. Use even when the user only mentions Sentry, an error tracker, capturing an exception, error boundaries, or debugging an unhandled exception in this project.
+description: Error-handling and reporting conventions for this project. Covers `try`/`catch` placement, Sentry capture calls, top-level error boundaries, and error-message quality.
+when_to_use: Use whenever writing, reviewing, or modifying code that throws, catches, or reports errors — even when the user only mentions Sentry, an error tracker, capturing an exception, error boundaries, or debugging an unhandled exception in this project.
+user-invocable: false
 ---
 
 # Observability Guidelines
