@@ -30,6 +30,31 @@ test("Card database browse and filter", {
   });
 });
 
+test("Filter the catalog by type via the pictogram dropdown", {
+  tag: ["@scenario:cards.browse", "@area:cards", "@priority:must"],
+}, async ({ page }) => {
+  const cardsPage = page.getByTestId("cards-page");
+  const grid = cardsPage.getByTestId("card-grid");
+
+  // Wait for hydration (the grid flips data-virtualized once measured) so the
+  // Base UI Select's controlled URL write is wired up before interacting.
+  await expect(grid).toHaveAttribute("data-virtualized", "true");
+
+  await test.step("Open the Type dropdown and choose a type", async () => {
+    await cardsPage.getByTestId("card-filter-type").click();
+    // The listbox is portaled out of the control's markup, so match the option
+    // by its accessible role/name rather than a scoped test id.
+    await page.getByRole("option", { name: "Grass" }).click();
+  });
+
+  await test.step("Verify the selection filters the grid", async () => {
+    await expect(page).toHaveURL(/[?&]type=Grass/);
+    await expect(cardsPage.getByTestId("card-filter-type")).toContainText(
+      "Grass",
+    );
+  });
+});
+
 test("Open a card's detail page from the grid", {
   tag: ["@scenario:cards.navigate", "@area:cards", "@priority:should"],
 }, async ({ page }) => {

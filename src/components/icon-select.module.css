@@ -1,8 +1,3 @@
-.root {
-  position: relative;
-  width: 100%;
-}
-
 /* Mirrors the app's native select/input styling so the control sits naturally
    next to the remaining native filter controls. The fill is exposed as
    --icon-select-background because the right contrast depends on the
@@ -44,20 +39,23 @@
   transform: rotate(45deg) translate(-0.0625em, -0.0625em);
 }
 
+/* Base UI portals the popup and positions it via the Positioner, so the popup
+   itself only needs box styling — the anchor width keeps it aligned to the
+   trigger. */
+/* Above the sticky header (z-index 10) so the open dropdown is never clipped. */
+.positioner {
+  z-index: 50;
+}
+
 .listbox {
-  position: absolute;
-  z-index: 10;
-  top: calc(100% + var(--space-1));
-  left: 0;
-  right: 0;
-  max-height: 18rem;
-  margin: 0;
+  min-width: var(--anchor-width);
+  max-height: min(18rem, var(--available-height));
   padding: var(--space-1);
   overflow-y: auto;
   border: 1px solid var(--color-border);
   border-radius: var(--radius-1);
   background: var(--color-surface);
-  box-shadow: 0 0.375rem 1rem rgb(0 0 0 / 18%);
+  box-shadow: var(--shadow-popup);
 }
 
 .optionIcon {
@@ -82,12 +80,14 @@
 }
 
 /* An accent-tinted highlight (rather than a solid accent fill) keeps the
-   per-type pictogram colors legible on the highlighted row. */
-.option[data-active="true"] {
+   per-type pictogram colors legible on the highlighted row. Base UI marks the
+   keyboard/pointer-highlighted item with `data-highlighted` and the current
+   selection with `data-selected`. */
+.option[data-highlighted] {
   background: color-mix(in srgb, var(--color-accent) 18%, var(--color-surface));
   box-shadow: inset 0 0 0 1px var(--color-accent);
 }
 
-.option[aria-selected="true"] .optionLabel {
+.option[data-selected] .optionLabel {
   font-weight: 600;
 }
