@@ -45,6 +45,9 @@
     ui-monospace, SFMono-Regular, Menlo, Consolas, "Liberation Mono", monospace;
 
   --content-max-width: 46rem;
+  /* The card routes (/cards, /cards/[id]) opt into a wider centered column than
+     the prose pages; see the scoped override in layout.module.css. */
+  --card-max-width: 62rem;
 }
 
 @media (prefers-color-scheme: dark) {

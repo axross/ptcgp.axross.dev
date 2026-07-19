@@ -4,6 +4,14 @@
   padding: 2.5rem 1.25rem 4rem;
 }
 
+/* The card routes render a `[data-cards-scope]` marker (src/app/cards/layout.tsx),
+   which widens the shared content column to the card width for those routes only —
+   the prose pages keep the 46rem column. Falls back to the default width where
+   `:has()` is unsupported. */
+.main:has([data-cards-scope]) {
+  max-width: var(--card-max-width);
+}
+
 .footer {
   max-width: var(--content-max-width);
   margin: 0 auto;

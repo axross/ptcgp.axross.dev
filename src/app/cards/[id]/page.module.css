@@ -14,25 +14,36 @@
   color: var(--color-accent);
 }
 
+/* Two-column layout: artwork pinned to the left, all facts to the right.
+   Stacks to a single column (art centered) on narrow viewports. */
 .top {
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: 1fr;
   gap: var(--space-4);
 }
 
 .art {
-  flex: 0 0 auto;
   width: 100%;
-  max-width: 15rem;
+  max-width: 17rem;
   margin: 0 auto;
 }
 
 .info {
-  flex: 1 1 18rem;
   display: flex;
   flex-direction: column;
   gap: var(--space-4);
   min-width: 0;
+}
+
+@media (min-width: 34rem) {
+  .top {
+    grid-template-columns: 17rem 1fr;
+    align-items: start;
+  }
+
+  .art {
+    margin: 0;
+  }
 }
 
 .head {
