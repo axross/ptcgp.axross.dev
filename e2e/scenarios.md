@@ -16,3 +16,6 @@ which journeys they assert with `@scenario:<id>` tags, plus `@area:<area>` /
 | docs.guide.view | Visitor reads a guide page's full content | docs | must |
 | docs.navigate | Visitor navigates from the home page to a guide via the site nav | docs | should |
 | app.not-found | Visitor hits an unknown URL, sees the not-found page, and returns home | app | should |
+| cards.browse | Visitor browses and filters the card database | cards | must |
+| cards.detail.view | Visitor opens a card and reads its full details | cards | must |
+| cards.navigate | Visitor opens a card's detail page from the database grid | cards | should |

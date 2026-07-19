@@ -1,0 +1,169 @@
+.detail {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+.back {
+  align-self: flex-start;
+  color: var(--color-foreground-muted);
+  font-size: 0.875rem;
+}
+
+.back:hover {
+  color: var(--color-accent);
+}
+
+.top {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-4);
+}
+
+.art {
+  flex: 0 0 auto;
+  width: 100%;
+  max-width: 15rem;
+  margin: 0 auto;
+}
+
+.info {
+  flex: 1 1 18rem;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+  min-width: 0;
+}
+
+.head {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+}
+
+.name {
+  margin: 0;
+  font-size: 1.75rem;
+  line-height: 1.2;
+}
+
+.identity {
+  margin: 0;
+  color: var(--color-foreground-muted);
+  font-size: 0.9375rem;
+}
+
+/* Stat and meta lists: a two-column term/value grid that stays readable when
+   values wrap. */
+.stats,
+.meta {
+  display: grid;
+  grid-template-columns: max-content 1fr;
+  gap: var(--space-1) var(--space-3);
+  margin: 0;
+}
+
+.meta {
+  padding-top: var(--space-3);
+  border-top: 1px solid var(--color-border);
+  font-size: 0.875rem;
+}
+
+.statRow {
+  display: contents;
+}
+
+.statTerm {
+  color: var(--color-foreground-muted);
+  font-weight: 500;
+}
+
+.statValue {
+  margin: 0;
+  color: var(--color-foreground);
+}
+
+.typeValue {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-1);
+}
+
+.statIcon {
+  font-size: 1.125rem;
+}
+
+.section {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.sectionHeading {
+  margin: 0;
+  font-size: 1.125rem;
+}
+
+.block {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+  padding: var(--space-3);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-2);
+  background: var(--color-surface);
+}
+
+.attackHead {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  margin: 0;
+}
+
+.blockName {
+  font-weight: 600;
+}
+
+.blockText {
+  margin: 0;
+  color: var(--color-foreground);
+}
+
+.damage {
+  margin-left: auto;
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+}
+
+.cost {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.125rem;
+}
+
+.costIcon {
+  font-size: 1.125rem;
+}
+
+.costFree {
+  color: var(--color-foreground-muted);
+  font-size: 0.875rem;
+}
+
+.flavor {
+  margin: 0;
+  color: var(--color-foreground-muted);
+  font-style: italic;
+}
+
+/* Visually hidden but kept in the accessibility tree, so an energy-pip row
+   still reads out its type names. */
+.srOnly {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}

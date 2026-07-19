@@ -20,6 +20,10 @@ export function SiteHeader() {
             Guides
           </NavLink>
 
+          <NavLink className={styles.navLink} href="/cards" data-testid="cards">
+            Cards
+          </NavLink>
+
           <GitHubLink />
         </nav>
       </div>

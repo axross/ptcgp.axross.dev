@@ -1,9 +1,24 @@
 import createMDX from "@next/mdx";
 import { withSentryConfig } from "@sentry/nextjs";
 import type { NextConfig } from "next";
+import { CARD_IMAGE_BASE_URL } from "./src/lib/cards/card-images";
+
+const cardImageCdn = new URL(CARD_IMAGE_BASE_URL);
 
 const nextConfig: NextConfig = {
   pageExtensions: ["ts", "tsx", "mdx"],
+  images: {
+    // Card artwork host, derived from the single provider constant so a
+    // provider swap cannot leave this allowlist stale; tightly scoped to the
+    // Pocket path. See src/lib/cards/card-images.ts.
+    remotePatterns: [
+      {
+        protocol: "https",
+        hostname: cardImageCdn.hostname,
+        pathname: `${cardImageCdn.pathname}/**`,
+      },
+    ],
+  },
 };
 
 const withMDX = createMDX({
