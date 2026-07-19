@@ -15,6 +15,29 @@
   --color-accent: #d97706;
   --color-accent-foreground: #ffffff;
 
+  /* Per-energy-type pictogram colors (see EnergyIcon). Each pairs with a
+     distinct shape and an accessible name, so color is reinforcement only. */
+  --color-energy-grass: #2e8a3c;
+  --color-energy-fire: #d2452a;
+  --color-energy-water: #2273c4;
+  --color-energy-lightning: #a37b0a;
+  --color-energy-psychic: #8b46ad;
+  --color-energy-fighting: #a85a28;
+  --color-energy-darkness: #3f4a5f;
+  --color-energy-metal: #64708a;
+  --color-energy-dragon: #8a7a22;
+  --color-energy-colorless: #857f6f;
+
+  /* Spacing and radius scales, used by the card database/detail surfaces. */
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 1rem;
+  --space-4: 1.5rem;
+  --space-5: 2.5rem;
+
+  --radius-1: 0.375rem;
+  --radius-2: 0.75rem;
+
   --font-sans:
     ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto,
     "Helvetica Neue", Arial, sans-serif;
@@ -22,6 +45,12 @@
     ui-monospace, SFMono-Regular, Menlo, Consolas, "Liberation Mono", monospace;
 
   --content-max-width: 46rem;
+  /* The card routes (/cards, /cards/[id]) opt into a wider centered column than
+     the prose pages; see the scoped override in layout.module.css. */
+  --card-max-width: 62rem;
+
+  /* Elevation shadow for popups/menus (e.g. the icon-select listbox). */
+  --shadow-popup: 0 0.375rem 1rem rgb(0 0 0 / 18%);
 }
 
 @media (prefers-color-scheme: dark) {
@@ -33,6 +62,20 @@
     --color-foreground-muted: #a1a1aa;
     --color-accent: #fbbf24;
     --color-accent-foreground: #18181b;
+
+    --color-energy-grass: #63c56f;
+    --color-energy-fire: #ff8a68;
+    --color-energy-water: #62aef2;
+    --color-energy-lightning: #e8b93e;
+    --color-energy-psychic: #c78ae0;
+    --color-energy-fighting: #e09059;
+    --color-energy-darkness: #94a2c2;
+    --color-energy-metal: #a8b2c8;
+    --color-energy-dragon: #cfb84f;
+    --color-energy-colorless: #b5af9e;
+
+    /* Deeper shadow on the dark ground so the popup still reads as elevated. */
+    --shadow-popup: 0 0.5rem 1.25rem rgb(0 0 0 / 55%);
   }
 }
 

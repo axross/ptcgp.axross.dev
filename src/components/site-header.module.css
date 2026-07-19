@@ -1,6 +1,11 @@
 .header {
   position: sticky;
   top: 0;
+  /* Keep the sticky header above page content — notably the card grid, whose
+     virtualized rows are absolutely positioned and would otherwise paint over
+     the header when scrolled beneath it. Portaled overlays (e.g. the filter
+     dropdown) sit above this. */
+  z-index: 10;
   border-bottom: 1px solid var(--color-border);
   background-color: color-mix(
     in srgb,

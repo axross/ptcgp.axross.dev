@@ -11,3 +11,9 @@ test("Guide page metadata uses the title template", async ({ page }) => {
 
   await expect(page).toHaveTitle("Getting started · ptcgp.axross.dev");
 });
+
+test("Card detail metadata uses the card name", async ({ page }) => {
+  await page.goto("/cards/A1-001");
+
+  await expect(page).toHaveTitle("Bulbasaur · ptcgp.axross.dev");
+});

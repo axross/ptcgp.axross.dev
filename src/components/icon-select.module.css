@@ -1,0 +1,93 @@
+/* Mirrors the app's native select/input styling so the control sits naturally
+   next to the remaining native filter controls. The fill is exposed as
+   --icon-select-background because the right contrast depends on the
+   container: a control on a surface panel fills with the page background,
+   while one directly on the page canvas fills with the surface color. */
+.trigger {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-2);
+  width: 100%;
+  padding: var(--space-2);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-1);
+  background: var(--icon-select-background, var(--color-background));
+  color: var(--color-foreground);
+  font: inherit;
+  text-align: left;
+  cursor: pointer;
+}
+
+.triggerValue {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  min-width: 0;
+}
+
+.triggerValue[data-placeholder="true"] {
+  color: var(--color-foreground-muted);
+}
+
+.chevron {
+  flex: 0 0 auto;
+  width: 0.5em;
+  height: 0.5em;
+  border-right: 2px solid var(--color-foreground-muted);
+  border-bottom: 2px solid var(--color-foreground-muted);
+  transform: rotate(45deg) translate(-0.0625em, -0.0625em);
+}
+
+/* Base UI portals the popup and positions it via the Positioner, so the popup
+   itself only needs box styling — the anchor width keeps it aligned to the
+   trigger. */
+/* Above the sticky header (z-index 10) so the open dropdown is never clipped. */
+.positioner {
+  z-index: 50;
+}
+
+.listbox {
+  min-width: var(--anchor-width);
+  max-height: min(18rem, var(--available-height));
+  padding: var(--space-1);
+  overflow-y: auto;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-1);
+  background: var(--color-surface);
+  box-shadow: var(--shadow-popup);
+}
+
+.optionIcon {
+  display: inline-flex;
+  flex: 0 0 auto;
+  font-size: 1.125em;
+}
+
+.optionLabel {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.option {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  padding: var(--space-2);
+  border-radius: var(--radius-1);
+  cursor: pointer;
+}
+
+/* An accent-tinted highlight (rather than a solid accent fill) keeps the
+   per-type pictogram colors legible on the highlighted row. Base UI marks the
+   keyboard/pointer-highlighted item with `data-highlighted` and the current
+   selection with `data-selected`. */
+.option[data-highlighted] {
+  background: color-mix(in srgb, var(--color-accent) 18%, var(--color-surface));
+  box-shadow: inset 0 0 0 1px var(--color-accent);
+}
+
+.option[data-selected] .optionLabel {
+  font-weight: 600;
+}
